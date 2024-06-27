@@ -27,14 +27,6 @@ function App() {
           element: <Home />,
         },
         {
-          path: '/search/city',
-          element: <SearchPage />,
-        },
-        {
-          path: 'search/map',
-          element: <SearchPage />,
-        },
-        {
           path: '/community',
           element: <MainLayout title="커뮤니티" />,
           errorElement: <Error />,
@@ -99,6 +91,21 @@ function App() {
         {
           path: 'signup',
           element: <SignUp />,
+        },
+      ],
+    },
+    {
+      path: '/search',
+      element: <Layout />,
+      errorElement: <Error />,
+      children: [
+        {
+          path: 'city',
+          element: <SearchPage searchType="city" />,
+        },
+        {
+          path: 'map',
+          element: <SearchPage searchType="map" />,
         },
       ],
     },
