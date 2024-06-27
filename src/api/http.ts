@@ -1,6 +1,6 @@
 import axios, { AxiosRequestConfig } from 'axios';
 
-const BASE_URL = 'http://';
+const BASE_URL = '/api/v1';
 
 export const createClient = (config?: AxiosRequestConfig) => {
   const axiosInstance = axios.create({
