@@ -7,7 +7,6 @@ export function Component() {
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const firstDepthPathname = pathname.split('/').filter(Boolean)[0];
-  console.log(firstDepthPathname);
   const user = useAuthStore((state) => state.user);
   const opponentRole = user?.role === 'CAREGIVER' ? '환자' : '간병인';
   const layoutTitles: { [key: string]: string } = useMemo(
