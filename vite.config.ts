@@ -32,5 +32,20 @@ export default defineConfig(({ mode }) => {
         '@': path.resolve(__dirname, './src'),
       },
     },
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            if (id.includes('node_modules')) {
+              const moduleName = id
+                .split('node_modules/.store/')
+                .pop()
+                ?.split('/')[0];
+              return `vendor/${moduleName}`;
+            }
+          },
+        },
+      },
+    },
   };
 });
